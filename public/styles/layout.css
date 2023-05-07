@@ -5,6 +5,7 @@
  */
 html {
   box-sizing: border-box;
+  font-family: 'Bungee', cursive;
 }
 *, *:before, *:after {
   box-sizing: inherit;

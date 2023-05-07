@@ -1,0 +1,33 @@
+/* css for header elements */
+.page-header {
+  height: 400px;
+  width: 100%;
+  padding-top: 150px;
+  background-color: #000ac7;
+    background-image: url(http://www.transparenttextures.com/patterns/arabesque.png);
+}
+
+.avatar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar > img {
+  height: 12rem;
+
+}
+
+h2 {
+  text-align: center;
+  margin: 0;
+  color: white;
+  font-weight: 300;
+
+
+}
+
+h2 span {
+  font-weight: bold;
+}
