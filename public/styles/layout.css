@@ -5,7 +5,7 @@
  */
 html {
   box-sizing: border-box;
-  font-family: 'Bungee', cursive;
+
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -21,6 +21,7 @@ body {
   font-size: 24px;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+main {
+  width: 90%;
+  margin: auto;   
+}
