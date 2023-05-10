@@ -16,4 +16,16 @@ nav > span {
   align-items: center;
 }
 
-/* p > span */
+p > span {
+  font-weight: bold;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.fa-solid.fa-angles-down{
+  color: red;
+}
