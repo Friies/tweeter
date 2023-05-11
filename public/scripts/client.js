@@ -5,20 +5,21 @@
  */
 
 $(document).ready(function() {
-  const escape = function(string) {
+  
+  const escape = function (string) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(string));
     return div.innerHTML;
   };
 
-  const renderTweets = function(tweets) {
+  const renderTweets = function (tweets) {
     for (let tweet of tweets) {
       let $tweet = createTweetElement(tweet);
       $("#tweets-container").prepend($tweet);
     }
-  }
+  };
   
-  const createTweetElement = function(tweet) {
+  const createTweetElement = function (tweet) {
   const  { user, content, created_at } = tweet;
 
     let $tweet = `
@@ -27,7 +28,6 @@ $(document).ready(function() {
           <div class="avatar-container">
             <img src=${escape(user.avatars)}
             <span class="name">${escape(user.name)}</span>            
-            ${user.avatars}
           </div>
           <span class="handle">${escape(user.handle)}</span>
         </header>
@@ -54,41 +54,50 @@ $(document).ready(function() {
       success: renderTweets
     });
   };
-
   loadTweets("/tweets", "GET", renderTweets);
 
-  // const handleSubmitRequest = function (text) {
-  const formReset = function () {
-    document.getElementById("tweet-form").reset();
-  };
-    ${"form"}.on("submit", function (event) {
-      event.preventDefault();
-      const text = $("textarea").length;
+  $("form").on("submit", function(event) {
+    event.preventDefault();
+    
+    const text = $("#tweet-text").val();
       
     if (text.length > 140) {
-      return alert("Error, this tweet is too long.");
-    } else if (!text) {
-      return alert("Error, your tweet can't be blank.");
+      $(".error-empty").slideUp();
+      $(".tweet-success").slideUp();
+      $(".error-length").slideDown();
+      return;
+    } 
+    if (text.length === 0) {
+      $(".error-length").slideUp();
+      $(".tweet-success").slideUp();
+      $(".error-empty").slideDown();
+      return;
     } else {
-      let serializedData = $(this).serialize();
+      $(".error-length").slideUp();
+      $(".error-empty").slideUp();
+    }
+    // Data serialization
+    let serializedData = $(this).serialize();
 
     $.ajax({
       type: "POST",
       url: "/tweets",
       data: serializedData,
     })
-      .done(function () {
-        alert("Success!");
-        formReset();
-      })
-      .fail(function () {
-        alert("Error");
-      })
-      .always(function () {
-        console.log("Finished!")
-      });
 
-    loadTweets();
-    }
+    .done(function () {
+      loadTweets();
+      $(".tweet-success").slideDown();
+      $(".error-length").slideUp();
+      $(".error-empty").slideUp();
+      $("textarea").val("");
+      $(".counter").text(140);
+    })
+    .fail(function () {
+      console.log("Error!");
+    })
+    .always(function () {
+      console.log("Finished!")
+    });
   });
 });

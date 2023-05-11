@@ -14,7 +14,11 @@
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
 
-    <!-- Bungee Font-->
+    <!-- Viewport zooming disabling --> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <!-- Bungee Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
@@ -38,13 +42,12 @@
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span>tweeter</span>
+      <span class="logo">tweeter</span>
       <div class="nav-right">
         <p><span>Write</span> a new tweet</p>
         <i class="fa-solid fa-angles-down"></i>
       </div>
     </nav>
-
     <header class="page-header">
       <div class="avatar">
         <img src="/images/profile-hex.png">
@@ -55,15 +58,20 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
+       
+        <span class="error-length"><i class="fas fa-exclamation-triangle"></i>Error, You're tweet is too long!</span>
+        <span class="error-empty"><i class="fas fa-exclamation-triangle"></i>Error, You're tweet can't be empty!</span>
+        <span class="tweet-success"><i class="fa-solid fa-check"></i>Nice, You're tweet was posted.</span>
         <form id="tweet-form" action="/tweets" method="post">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
-          <div>
+          <div class="button-counter">
             <input type="submit" value="Tweet">
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
       </section>
+      <section id="tweets-container"></section>
     </main>
   </body>
 </html>

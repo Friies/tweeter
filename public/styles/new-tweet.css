@@ -1,13 +1,28 @@
-.new-tweet > h2 {
-  color: #545145;
-  margin: 1rem 0;
+.error-length, .error-empty {
+  display: none;
+  border: 2px dotted;
+  padding: 0.5rem;
+  width: fit-content;
+  background-position: 10px center;
+  color: red;
+  background-color: #fca6a6;
 }
 
-form {
+.tweet-success {
+  display: none;
+  border: 2px dotted;
+  padding: 0.5em;
+  background-position: 10px center;
+  color: green;
+  background-color: #c0f5c0;
+  width: fit-content;
+}
+
+#tweet-form {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 label {
@@ -26,6 +41,8 @@ label {
 
 .button-counter input {
   font-family: 'Bungee', cursive;
+  background-color: #4056a1;
+  color: #FFFFFF;
   padding: 0.5rem;
 }
 
