@@ -19,15 +19,13 @@ label {
 
 .button-counter {
   display: flex;
-  margin-top: 1rem;
   justify-content: space-between;
-
+  align-items: center;
+  margin: 1rem 0;
 }
 
-button {
+.button-counter input {
   font-family: 'Bungee', cursive;
-  color: #FFFFFF;
-  background-color: #4056a1;
   padding: 0.5rem;
 }
 
