@@ -1,7 +1,6 @@
 $(document).ready(function() {
   
   let textarea = $("textarea");
-
   textarea.on("input", function() {
     const NumOftweets = 140 - $(this).val().length;
 
@@ -9,9 +8,11 @@ $(document).ready(function() {
     $(".counter").html(`${NumOftweets}`)
 
     if (NumOftweets < 0) {
-      $(".counter").css("color", "red");
+      $(".counter").addClass("counter-invalid");
     } else {
-      $(".counter").css("color", "#545149")
+      $(".counter").removeClass("counter-invalid")
     }
+
   });
+  
 });

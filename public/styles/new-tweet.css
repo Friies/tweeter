@@ -1,10 +1,11 @@
+/* CSS style for new-tweets */
 .error-length, .error-empty {
   display: none;
   border: 2px dotted;
   padding: 0.5rem;
   width: fit-content;
   background-position: 10px center;
-  color: red;
+  color: rgba(255, 0, 0, 0.847);
   background-color: #fca6a6;
 }
 
@@ -13,7 +14,7 @@
   border: 2px dotted;
   padding: 0.5em;
   background-position: 10px center;
-  color: green;
+  color: rgba(0, 128, 0, 0.759);
   background-color: #c0f5c0;
   width: fit-content;
 }
@@ -49,4 +50,11 @@ label {
 .counter {
   font-family: "Bungee", cursive;
   color: #545145;
+}
+
+/* desktop breakpoint */
+@media only screen and (min-width: 1024px) {
+  .new-tweet {
+    padding-top: 9.4rem;
+  }
 }

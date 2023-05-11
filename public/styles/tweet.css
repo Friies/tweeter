@@ -1,3 +1,5 @@
+/* CSS Styles for tweet*/
+
 .tweet{
   border-style: solid;
   border-color: #545145;
@@ -88,5 +90,37 @@ footer {
 }
 
 .counter-invalid {
-  color: red;
+  color: rgb(221, 0, 0);
+}
+
+
+/* breakpoint (desktop) */
+@media only screen and (min-width: 1024px) {
+  .tweet > header {
+    font-size: smaller;
+    width: 92%;
+  }
+
+  .avatar-container {
+    gap: 1rem;
+  }
+
+  .avatar-container > img {
+    height: 3rem;
+  }
+
+  .user-tweet {
+    height: 3.5rem;
+    padding: 0;
+    font-size: smaller;
+  }
+
+  footer {
+    width: 85%;
+    margin-left: 3rem;
+  }
+
+  .icons {
+    width: 22%;
+  }
 }

@@ -11,13 +11,9 @@ html {
   box-sizing: inherit;
 }
 
-/*
- * Global layout stuff
- */
-
 body {
   font-family: 'Source Sans Pro', sans-serif;
-  color: #545149;
+  color: #454256;
   background-color: #f4f1ec;
   font-size: 24px;
 }
@@ -25,4 +21,11 @@ body {
 main {
   width: 90%;
   margin: auto;   
+}
+
+
+@media only screen and (min-width: 1024) {
+  main {
+    width: 50%;
+  }
 }

@@ -1,10 +1,28 @@
 /* css for header elements */
+
 .page-header {
-  height: 400px;
-  width: 100%;
-  padding-top: 150px;
+  height: 25rem;
+  width: 100vw;
+  padding-top: 165px;
   background-color: #000ac7;
-    background-image: url(http://www.transparenttextures.com/patterns/arabesque.png);
+    background-image: url(http://www.transparenttextures.com/patterns/moulin.png);
+}
+
+body {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+h2 {
+  text-align: center;
+  margin: 0;
+  color: white;
+  font-weight: 300;
+
+}
+
+h2 span {
+  font-weight: bold;
 }
 
 .avatar {
@@ -19,14 +37,11 @@
 
 }
 
-h2 {
-  text-align: center;
-  margin: 0;
-  color: white;
-  font-weight: 300;
-
-}
-
-h2 span {
-  font-weight: bold;
+@media only screen and (min-width: 1024px) {
+  .page-header {
+    margin: 12rem 6rem 12rem 2rem;
+    width: 35%;
+    height: 30%;
+    padding-top: 2.5rem;
+  }
 }
