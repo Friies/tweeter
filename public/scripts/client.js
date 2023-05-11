@@ -34,7 +34,7 @@ $(document).ready(function() {
   const renderTweets = function(tweets) {
     for (let tweet of tweets) {
       let $tweet = createTweetElement(tweet);
-      $("#tweets-container").append($tweet);
+      $("#tweets-container").prepend($tweet);
     }
   }
   
@@ -63,7 +63,7 @@ $(document).ready(function() {
     `;
     return $tweet;
   };
-  // renderTweets(data);
+
 
   const loadTweets = function() {
     $.ajax({
@@ -76,33 +76,39 @@ $(document).ready(function() {
 
   loadTweets("/tweets", "GET", renderTweets);
 
-  const handleSubmitRequest = function(text) {
+  // const handleSubmitRequest = function(text) {
+  const formReset =function {
+    document.getElementById("tweet-form").requestFullscreen();
+  };
+    ${"form"}.on("submit", function(event) {
+      event.preventDefault();
+      const text = $("textarea").length;
+      
     if (text.length > 140) {
       return alert("Error, this tweet is too long.");
     } else if (!text) {
       return alert("Error, your tweet can't be blank.");
     } else {
-      $.ajax({
-        url: "/tweets",
-        method: "POST",
-        data: { text },
-      })
-        .done(function () {
-          alert("Success!");
-        })
-        .fail(function () {
-          alert("Error");
-        })
-        .always(function () {
-          alert("Finished!");
-        });
-    }
-  };
 
-  $("form").on("submit", function(event) {
-    event.preventDefault();
-    $(this).serialize();
-    // console.log($(this).serialize());
-    handleSubmitRequest($("textarea").val());
+      let serializedData = $(this).serialize();
+
+    $.ajax({
+      type: "POST",
+      url: "/tweets",
+      data: serializedData,
+    })
+      .done(function () {
+        alert("Success!");
+        formReset();
+      })
+      .fail(function () {
+        alert("Error");
+      })
+      .always(function () {
+        console.log("Finished!")
+      });
+
+    loadTweets();
+    }
   });
 });

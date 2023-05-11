@@ -9,6 +9,10 @@
   box-shadow: 5px 5px 5px cornflowerblue;
 }
 
+#tweet-form label {
+  padding: 2.5rem 0;
+}
+
 
 .tweet > header {
   display: flex; 
