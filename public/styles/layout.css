@@ -24,7 +24,7 @@ main {
 }
 
 
-@media only screen and (min-width: 1024) {
+@media only screen and (min-width: 1024px) {
   main {
     width: 50%;
   }
