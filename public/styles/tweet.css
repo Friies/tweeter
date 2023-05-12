@@ -124,3 +124,15 @@ footer {
     width: 22%;
   }
 }
+
+/* breakpoint (tablet) */
+@media only screen and (min-width: 768px) {
+  footer {
+      width: 88%;
+      margin-left: 3rem;
+    }
+
+  .icons {
+    width: 18%;
+  }
+}

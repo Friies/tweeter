@@ -18,7 +18,7 @@ h2 {
   margin: 0;
   color: white;
   font-weight: 300;
-
+  padding-bottom: 2.5rem;
 }
 
 h2 span {
@@ -37,11 +37,19 @@ h2 span {
 
 }
 
+
+/* breakpoints */
 @media only screen and (min-width: 1024px) {
   .page-header {
     margin: 12rem 6rem 12rem 2rem;
     width: 35%;
     height: 30%;
     padding-top: 2.5rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .page-header {
+    padding-top: 7.2rem;
   }
 }
